@@ -38,4 +38,8 @@ public class MainController {
     	return "recipes";
     }
     
+    @GetMapping("/instructions")
+    public String instructions() {
+    	return "instructions";
+    }
 }
