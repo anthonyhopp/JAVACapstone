@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.anthonyhopp</groupId>
-	<artifactId>SpringSecurityDemo</artifactId>
+	<artifactId>AnthonyCapstone</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringSecurityDemo</name>
+	<name>AnthonyCapstone</name>
 	<description>Demo of Spring Security</description>
 	<properties>
 		<java.version>17</java.version>
