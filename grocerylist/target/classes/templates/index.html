@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+  body {
+    background-image: url('./images/recipe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+<link rel="stylesheet" type="text/css"
+  th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+
+<title>Registration</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      
+      <div class="navbar-text">Logged in as: <span sec:authentication="principal.username">User</span></div>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" style="font-size: 24px;">Logout</a></li>
+      </ul>
+    </div>     
+  </nav>
+
+  <br>
+  <br>
+  <div class="container">
+     <h2 style="color: black; font-weight: bold; font-size: 64px;">Welcome to my grocery list application!</h2><br><br><br>
+     
+     <p>
+      <a href="groceries.html" style="font-size: 32px; color: black;">Click here to make a grocery list!!</a><br><br><br>
+      <a href="recipes" style="font-size: 32px; color: black">Enter your recipes here!</a><br><br><br>
+      <a href="instructions" style="font-size: 32px; color: black;">Tell us how to make your recipe!!</a><br><br><br>
+      <a href="allRecipes" style="font-size: 32px; color: black">Search your recipes here!</a><br><br><br>
+      <a href="contactUs" style="font-size: 32px; color: black">Contact us</a><br><br><br>
+      
+    </p>
+  </div>
+
+  <script type="text/javascript"
+     th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+  <script type="text/javascript"
+     th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

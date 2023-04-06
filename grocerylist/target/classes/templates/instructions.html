@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Recipe Instructions</title>
+	<link rel="stylesheet" type="text/css"
+  th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<style>
+  body {
+    background-image: url('./images/recipe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
+</head>
+<body>
+<div id="homebutton">
+    <a href="http://localhost:8080" style="color: black">Home</a><br>
+    <a href="recipes" style="color: black">Add a recipe</a>    
+</div>
+ <div class="container">
+        <h1 class="mt-5">Recipe Instructions</h1>
+        <form th:action="@{/instructions}" method="POST" th:object="${instructions}">
+            <div class="form-group"></div>
+	
+		<label for="recipeId">Recipe ID:</label><br>
+		<input type="number" id="recipeId" name="recipeId"><br>
+
+		<label for="stepNumber">Number of Steps:</label><br>
+		<input type="number" id="stepNumber" name="stepNumber"><br>
+
+		<label for="instructionText">Instruction:</label><br>
+		<textarea class="form-control" id="instructionText" name="instructionText" rows="5"></textarea><br>
+		<input type="submit" value="Submit">
+	</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="capstonestyle.css">
+    <style>
+        body {
+          background-image: url('./images/groceryaisle.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+        }
+      </style>
+      
+</head>
+
+<body>
+    <div id="homebutton">
+    <a href="http://localhost:8080">Home</a>
+</div>
+    <h2 id="top_headline">Grocery Categories</h2>
+    <form>
+    <div class="container">
+        <div class="dropDown">
+        <label for="freshVeg">Fresh Vegetables</label>
+        <select id="freshVeg">
+            <option value="">Select One</option>
+            <option value="Asparagus - Fresh Vegetables">Asparagus</option>
+            <option value="Broccoli - Fresh Vegetables">Broccoli</option>
+            <option value="Carrots - Fresh Vegetables">Carrots</option>
+            <option value="Cauliflower - Fresh Vegetables">Cauliflower</option>
+            <option value="Celery - Fresh Vegetables">Celery</option>
+            <option value="Corn - Fresh Vegetables">Corn</option>
+            <option value="Cucumbers - Fresh Vegetables">Cucumbers</option>
+            <option value="Lettuce - Fresh Vegetables">Lettuce</option>
+            <option value="Mushrooms - Fresh Vegetables">Mushrooms</option>
+            <option value="Onions - Fresh Vegetables">Onions</option>
+            <option value="Peppers - Fresh Vegetables">Peppers</option>
+            <option value="Potatoes - Fresh Vegetables">Potatoes</option>
+            <option value="Spinach - Fresh Vegetables">Spinach</option>
+            <option value="Squash - Fresh Vegetables">Squash</option>
+            <option value="Zucchini - Fresh Vegetables">Zucchini</option>
+            <option value="Tomatoes - Fresh Vegetables">Tomatoes</option>
+            <option value="Greens - Fresh Vegetables">Greens</option>
+
+        </select><br><br>
+        <button type="button" onclick="addCategory('freshVeg')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="cheese">Cheese</label>
+        <select id="cheese">
+            <option value="">Select One</option>
+            <option value="Bleu Cheese - Cheese">Bleu Cheese</option>
+            <option value="Cheddar - Cheese">Cheddar</option>
+            <option value="Cottage Cheese - Cheese">Cottage Cheese</option>
+            <option value="Cream Cheese - Cheese">Cream Cheese</option>
+            <option value="Feta - Cheese">Feta</option>
+            <option value="Goat Cheese - Cheese">Goat Cheese</option>
+            <option value="Mozzarella - Cheese">Mozzarella</option>
+            <option value="Parmesan - Cheese">Parmesan</option>
+            <option value="Provolone - Cheese">Provolone</option>
+            <option value="Ricotta - Cheese">Ricotta</option>
+            <option value="Sandwich slices - Cheese">Sandwich slices</option>
+            <option value="Swiss - Cheese">Swiss</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('cheese')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="beverages">Beverages</label>
+        <select id="beverages">
+            <option value="">Select One</option>
+            <option value="Beer - Beverages">Beer</option>
+            <option value="Club Soda - Beverages">Club Soda</option>
+            <option value="Champagne - Beverages">Champagne</option>
+            <option value="Milk - Beverages">Milk</option>
+            <option value="Juice - Beverages">Juice</option>
+            <option value="Mixers - Beverages">Mixers</option>
+            <option value="Red Wine - Beverages">Red Wine</option>
+            <option value="White Wine - Beverages">White Wine</option>
+            <option value="Saké - Beverages">Saké</option>
+            <option value="Soda pop - Beverages">Soda pop</option>
+            <option value="Sports drink - Beverages">Sports drink</option>
+            <option value="Tonic - Beverages">Tonic</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('beverages')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="condiments">Condiments & Sauces</label>
+        <select id="condiments">
+            <option value="">Select One</option>
+            <option value="BBQ sauce - Condiments & Sauces">BBQ sauce</option>
+            <option value="Gravy - Condiments & Sauces">Gravy</option>
+            <option value="Honey - Condiments & Sauces">Honey</option>
+            <option value="Hot sauce - Condiments & Sauces">Hot sauce</option>
+            <option value="Jam - Condiments & Sauces">Jam</option>
+            <option value="Ketchup - Condiments & Sauces">Ketchup</option>
+            <option value="Mayonnaise - Condiments & Sauces">Mayonnaise</option>
+            <option value="Pasta sauce - Condiments & Sauces">Pasta sauce</option>
+            <option value="Relish - Condiments & Sauces">Relish</option>
+            <option value="Salad dressing - Condiments & Sauces">Salad dressing</option>
+            <option value="Salsa - Condiments & Sauces">Salsa</option>
+            <option value="Soy sauce - Condiments & Sauces">Soy sauce</option>
+            <option value="Steak sauce - Condiments & Sauces">Steak sauce</option>
+            <option value="Syrup - Condiments & Sauces">Syrup</option>
+            <option value="Worcestershire sauce - Condiments & Sauces">Worcestershire sauce</option>
+            <option value="Jelly - Condiments & Sauces">Jelly</option>
+            <option value="Preserves - Condiments & Sauces">Preserves</option>
+            <option value="Mustard - Condiments & Sauces">Mustard</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('condiments')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="meat">Meat</label>
+        <select id="meat">
+            <option value="">Select One</option>
+            <option value="Bacon - Meat">Bacon</option>
+            <option value="Beef - Meat">Beef</option>
+            <option value="Chicken - Meat">Chicken</option>
+            <option value="Ground beef - Meat">Ground beef</option>
+            <option value="Ham - Meat">Ham</option>
+            <option value="Hot dogs - Meat">Hot dogs</option>
+            <option value="Lunchmeat - Meat">Lunchmeat</option>
+            <option value="Turkey - Meat">Turkey</option>
+            <option value="Pork - Meat">Pork</option>
+            <option value="Ground Turkey - Meat">Ground Turkey</option>
+            <option value="Sausage - Meat">Sausage</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('meat')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="spices">Spices & Herbs</label>
+        <select id="spices">
+            <option value="">Select One</option>
+            <option value="Basil - Spices & Herbs">Basil</option>
+            <option value="Black pepper - Spices & Herbs">Black pepper</option>
+            <option value="Cilantro - Spices & Herbs">Cilantro</option>
+            <option value="Cinnamon - Spices & Herbs">Cinnamon</option>
+            <option value="Garlic - Spices & Herbs">Garlic</option>
+            <option value="Ginger - Spices & Herbs">Ginger</option>
+            <option value="Mint - Spices & Herbs">Mint</option>
+            <option value="Oregano - Spices & Herbs">Oregano</option>
+            <option value="Paprika - Spices & Herbs">Paprika</option>
+            <option value="Parsley - Spices & Herbs">Parsley</option>
+            <option value="Red pepper - Spices & Herbs">Red pepper</option>
+            <option value="Salt - Spices & Herbs">Salt</option>
+            <option value="Vanilla extract - Spices & Herbs">Vanilla extract</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('spices')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="dairy">Dairy</label>
+        <select id="dairy">
+            <option value="">Select One</option>
+            <option value="Butter - Dairy">Butter</option>
+            <option value="Cottage cheese - Dairy">Cottage cheese</option>
+            <option value="Half &amp; half - Dairy">Half &amp; half</option>
+            <option value="Milk - Dairy">Milk</option>
+            <option value="Sour cream - Dairy">Sour cream</option>
+            <option value="Whipped cream - Dairy">Whipped cream</option>
+            <option value="Yogurt - Dairy">Yogurt</option>
+            <option value="Margarine - Dairy">Margarine</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('dairy')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="refrigerated">Refrigerated Items</label>
+        <select id="refrigerated">
+            <option value="">Select One</option>
+            <option value="Bagels - Refrigerated Items">Bagels</option>
+            <option value="Chip dip - Refrigerated Items">Chip dip</option>
+            <option value="Eggs - Refrigerated Items">Eggs</option>
+            <option value="English muffins - Refrigerated Items">English muffins</option>
+            <option value="Fruit juice - Refrigerated Items">Fruit juice</option>
+            <option value="Hummus - Refrigerated Items">Hummus</option>
+            <option value="Ready-bake breads - Refrigerated Items">Ready-bake breads</option>
+            <option value="Tofu - Refrigerated Items">Tofu</option>
+            <option value="Tortillas - Refrigerated Items">Tortillas</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('refrigerated')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="baking">Baking</label>
+        <select id="baking">
+            <option value="">Select One</option>
+            <option value="Baking powder - Baking">Baking powder</option>
+            <option value="Bread crumbs - Baking">Bread crumbs</option>
+            <option value="Cake mix - Baking">Cake mix</option>
+            <option value="Cake icing - Baking">Cake icing</option>
+            <option value="Chocolate chips - Baking">Chocolate chips</option>
+            <option value="Flour - Baking">Flour</option>
+            <option value="Shortening - Baking">Shortening</option>
+            <option value="Sugar - Baking">Sugar</option>
+            <option value="Sugar substitute - Baking">Sugar substitute</option>
+            <option value="Yeast - Baking">Yeast</option>
+            <option value="Baking soda - Baking">Baking soda</option>
+            <option value="Brownie Mix - Baking">Brownie Mix</option>
+            <option value="Cake Decorations - Baking">Cake Decorations</option>
+            <option value="Cocoa powder - Baking">Cocoa powder</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('baking')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="baked">Baked Goods</label>
+        <select id="baked">
+            <option value="">Select One</option>
+            <option value="Bagels - Baked Goods">Bagels</option>
+            <option value="Buns - Baked Goods">Buns</option>
+            <option value="Cake - Baked Goods">Cake</option>
+            <option value="Donuts - Baked Goods">Donuts</option>
+            <option value="Fresh bread - Baked Goods">Fresh bread</option>
+            <option value="Pie - Baked Goods">Pie</option>
+            <option value="Pita bread - Baked Goods">Pita bread</option>
+            <option value="Sliced bread - Baked Goods">Sliced bread</option>
+            <option value="Croissants - Baked Goods">Croissants</option>
+            <option value="Rolls - Baked Goods">Rolls</option>
+            <option value="Cookies - Baked Goods">Cookies</option>
+            <option value="Pastries - Baked Goods">Pastries</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('baked')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="canned">Canned Foods</label>
+        <select id="canned">
+            <option value="">Select One</option>
+            <option value="Applesauce - Canned Foods">Applesauce</option>
+            <option value="Baked beans - Canned Foods">Baked beans</option>
+            <option value="Broth - Canned Foods">Broth</option>
+            <option value="Fruit - Canned Foods">Fruit</option>
+            <option value="Olives - Canned Foods">Olives</option>
+            <option value="Tinned meats - Canned Foods">Tinned meats</option>
+            <option value="Tuna - Canned Foods">Tuna</option>
+            <option value="Soup - Canned Foods">Soup</option>
+            <option value="Tomatoes - Canned Foods">Tomatoes</option>
+            <option value="Veggies - Canned Foods">Veggies</option>
+            <option value="Canned Chicken - Canned Foods">Canned Chicken</option>
+            <option value="Chilli - Canned Foods">Chilli</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('canned')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="snacks">Snacks</label>
+        <select id="snacks">
+            <option value="">Select One</option>
+            <option value="Candy - Snacks">Candy</option>
+            <option value="Gum - Snacks">Gum</option>
+            <option value="Cookies - Snacks">Cookies</option>
+            <option value="Crackers - Snacks">Crackers</option>
+            <option value="Dried fruit - Snacks">Dried fruit</option>
+            <option value="Granola bars - Snacks">Granola bars</option>
+            <option value="Mix - Snacks">Mix</option>
+            <option value="Nuts - Snacks">Nuts</option>
+            <option value="Seeds - Snacks">Seeds</option>
+            <option value="Oatmeal - Snacks">Oatmeal</option>
+            <option value="Popcorn - Snacks">Popcorn</option>
+            <option value="Potato Chips - Snacks">Potato Chips</option>
+            <option value="Pretzels - Snacks">Pretzels</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('snacks')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="fruit">Fresh Fruits</label>
+        <select id="fruit">
+            <option value="">Select One</option>
+            <option value="Apples - Fresh Fruits">Apples</option>
+            <option value="Avocados - Fresh Fruits">Avocados</option>
+            <option value="Bananas - Fresh Fruits">Bananas</option>
+            <option value="Berries - Fresh Fruits">Berries</option>
+            <option value="Cherries - Fresh Fruits">Cherries</option>
+            <option value="Grapefruit - Fresh Fruits">Grapefruit</option>
+            <option value="Grapes - Fresh Fruits">Grapes</option>
+            <option value="Kiwis - Fresh Fruits">Kiwis</option>
+            <option value="Lemons - Fresh Fruits">Lemons</option>
+            <option value="Melon - Fresh Fruits">Melon</option>
+            <option value="Nectarines - Fresh Fruits">Nectarines</option>
+            <option value="Oranges - Fresh Fruits">Oranges</option>
+            <option value="Peaches - Fresh Fruits">Peaches</option>
+            <option value="Pears - Fresh Fruits">Pears</option>
+            <option value="Plums - Fresh Fruits">Plums</option>
+            <option value="Limes - Fresh Fruits">Limes</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('fruit')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="seafood">Seafood</label>
+        <select id="seafood">
+            <option value="">Select One</option>
+            <option value="Catfish - Seafood">Catfish</option>
+            <option value="Crab - Seafood">Crab</option>
+            <option value="Lobster - Seafood">Lobster</option>
+            <option value="Mussels - Seafood">Mussels</option>
+            <option value="Oysters - Seafood">Oysters</option>
+            <option value="Salmon - Seafood">Salmon</option>
+            <option value="Shrimp - Seafood">Shrimp</option>
+            <option value="Tilapia - Seafood">Tilapia</option>
+            <option value="Tuna - Seafood">Tuna</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('seafood')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="baby">Baby Stuff</label>
+        <select id="baby">
+            <option value="">Select One</option>
+            <option value="Baby food - Baby Stuff">Baby food</option>
+            <option value="Diapers - Baby Stuff">Diapers</option>
+            <option value="Formula - Baby Stuff">Formula</option>
+            <option value="Baby Lotion - Baby Stuff">Baby Lotion</option>
+            <option value="Baby wash - Baby Stuff">Baby wash</option>
+            <option value="Baby Wipes - Baby Stuff">Baby Wipes</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('baby')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="misc">Miscellaneous</label>
+        <select id="misc">
+            <option value="">Select One</option>
+            <option value="Bouillon cubes - Misc">Bouillon cubes</option>
+            <option value="Cereal - Misc">Cereal</option>
+            <option value="Coffee Filters - Misc">Coffee Filters</option>
+            <option value="Instant potatoes - Misc">Instant potatoes</option>
+            <option value="Lemon juice - Misc">Lemon juice</option>
+            <option value="Mac & cheese - Misc">Mac &amp; cheese</option>
+            <option value="Olive oil - Misc">Olive oil</option>
+            <option value="Packaged meals - Misc">Packaged meals</option>
+            <option value="Pancake mix - Misc">Pancake mix</option>
+            <option value="Pasta - Misc">Pasta</option>
+            <option value="Peanut butter - Misc">Peanut butter</option>
+            <option value="Pickles - Misc">Pickles</option>
+            <option value="Rice - Misc">Rice</option>
+            <option value="Tea - Misc">Tea</option>
+            <option value="Vegetable oil - Misc">Vegetable oil</option>
+            <option value="Vinegar - Misc">Vinegar</option>
+            <option value="Waffle mix - Misc">Waffle mix</option>
+            <option value="Lime juice - Misc">Lime juice</option>
+            <option value="Coffee Ground - Misc">Coffee Ground</option>
+            <option value="Coffee Beans - Misc">Coffee Beans</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('misc')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="frozen">Frozen</label>
+        <select id="frozen">
+            <option value="">Select One</option>
+            <option value="Frozen Breakfasts - Frozen">Frozen Breakfasts</option>
+            <option value="Frozen Burritos - Frozen">Frozen Burritos</option>
+            <option value="Fish sticks - Frozen">Fish sticks</option>
+            <option value="Fries - Frozen">Fries</option>
+            <option value="Tater tots - Frozen">Tater tots</option>
+            <option value="Ice cream - Frozen">Ice cream</option>
+            <option value="Sorbet - Frozen">Sorbet</option>
+            <option value="Juice concentrate - Frozen">Juice concentrate</option>
+            <option value="Pizza - Frozen">Pizza</option>
+            <option value="Pizza Rolls - Frozen">Pizza Rolls</option>
+            <option value="Popsicles - Frozen">Popsicles</option>
+            <option value="TV Dinners - Frozen">TV Dinners</option>
+            <option value="Frozen Vegetables - Frozen">Frozen Vegetables</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('frozen')">Select</button>
+        <br><br>
+    </div>
+    <div class="dropDown">
+        <label for="kitchen">Kitchen Items</label>
+        <select id="kitchen">
+            <option value="">Select One</option>
+            <option value="Aluminum foil - Kitchen">Aluminum foil</option>
+            <option value="Napkins - Kitchen">Napkins</option>
+            <option value="Non-stick spray - Kitchen">Non-stick spray</option>
+            <option value="Paper towels - Kitchen">Paper towels</option>
+            <option value="Plastic wrap - Kitchen">Plastic wrap</option>
+            <option value="Sandwich / Freezer bags - Kitchen">Sandwich / Freezer bags</option>
+            <option value="Wax paper - Kitchen">Wax paper</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="addCategory('kitchen')">Select</button>
+        <br><br>
+    </div>
+</div>
+</form>
+
+    <br>
+    <h2 id="list_title">Selections:</h2>
+    <div id="selected-items-container">
+        <span id="groceryList">
+        </span>
+      </div>
+      <div id="buttons">
+        <button type="button" onclick="clearSelections()">Clear</button>
+        <button type="button" onclick="showSelection()">Finalize</button>
+    </div>
+ 
+
+    <script>
+        function addCategory(categoryId) {
+            var category = document.getElementById(categoryId).value;
+            var list = document.getElementById("groceryList");
+            var entry = document.createElement("li");
+            entry.appendChild(document.createTextNode(category));
+            list.appendChild(entry);
+        }
+        function clearSelections() {
+            var list = document.getElementById("groceryList");
+            while (list.firstChild) {
+                list.removeChild(list.firstChild);
+            }
+        }
+        function showSelection() {
+            var list = document.getElementById("groceryList");
+            var category = [];
+            for (var i = 0; i < list.children.length; i++) {
+                var chosenCategory = list.children[i].textContent;
+                category.push(chosenCategory);
+            }
+
+            function downloadTextFile(text, filename) {
+            var textFile;
+            var downloadLink;
+
+            textFile = new Blob([text], { type: "text/plain" });
+            downloadLink = document.createElement("a");
+            downloadLink.download = filename;
+            downloadLink.href = window.URL.createObjectURL(textFile);
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+        }
+
+        function exportTableToTXT(filename) {
+            var list = document.getElementById("groceryList");
+            var category = [];
+            for (var i = 0; i < list.children.length; i++) {
+                var chosenCategory = list.children[i].textContent;
+                category.push(chosenCategory);
+            }
+            var text = category.join("\n");
+
+            downloadTextFile(text, filename);
+        }
+
+
+           var message = "You have selected: " + category.join(", ");
+          alert(message);
+           exportTableToTXT('Shopping_List.txt');
+           clearSelections();
+       }
+
+
+    </script>
+     
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
